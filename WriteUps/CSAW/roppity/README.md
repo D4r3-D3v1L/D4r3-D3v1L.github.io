@@ -29,13 +29,6 @@ int main() {
 }
 ```
 
-The main function prints the hello then takes our input using gets and exits
-
-So Basic Idea of Exploitation:
-
-Using puts_got as argument to puts_plt we can leak the puts address and then get back to main  so we can exploit the overflow again.
-
-Leaking Libc_base:
 
 ```python
 from pwn import *
@@ -96,7 +89,7 @@ system = libc.sym["system"]
 
 We have everything we need to get shell 
 
-The Final Script to get Shell
+##The Final Script to get Shell
 
 ```python
 from pwn import *
