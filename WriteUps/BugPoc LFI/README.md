@@ -32,7 +32,7 @@ function processUrl(e) {
 }
 ```
  
-It takes url and makes a post.And then it calls **populateWebsitePreview()** function to fetch the og:image and its tags from the url and loads it in **imgData** .
+It takes url and makes a post.And then it calls **populateWebsitePreview()** function to fetch the og:image and its tags from the url and loads it to **imgData** .
 
  ![og:mage](2.png)
 
