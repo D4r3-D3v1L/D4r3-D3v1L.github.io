@@ -51,14 +51,14 @@ I crafted a html with meta tag og:image in my php server
 Placed the ngrok link ,and observe the response there is base64 encoded data of our image file (test.png) .And we also see the incomming requests from the server to our local server.
 Well we understand the functionality.It makes request to specified url/value which we place in the content of og:image 
 
-If we place other than (jpg|png|svg) files in content we get an error `Image Preview Error: Invalid Image URL`
+If we place other than jpg,png,svg files in content we get an error `Image Preview Error: Invalid Image URL`
 
 Lets see what checking this ..
 
 ### Checks and Bypass :
 
 **Check 1**
-- When we place content with image extensions , we getting a **HEAD** requestthen **GET** request which fetches the image ,If we provide any extensions other than (jpg|png|svg) we didn't get any HEAD request .
+- When we place content with image extensions , we getting a **HEAD** requestthen **GET** request which fetches the image ,If we provide any extensions other than jpg,png,svg we didn't get any HEAD incomming request .
 - So the server checking the extension we placing, We can bypass this by providing **double extensions** like **test.svg.php**
 
 **index.php**
@@ -81,6 +81,7 @@ Lets see what checking this ..
   it only return Headers not reponse body .
 - By observing the Incomming HEAD requests for Valid file , we see that it has a **Content-type** for successful request .
 - So added **Content-Type: image/svg+xml** in the `test.svg.php`.We got no error there , so it happened , we bypassed HEAD check
+
 ```php
 <?php
 
@@ -89,6 +90,7 @@ Lets see what checking this ..
 ?>
 	
 ```
+
 **LFI**
 
 If we observe clearly we have a **GET** request after the HEAD request to fetch the image content ,so if we redirect the GET request of the image` to file:///etc/passwd` it fetches the etc/passwd content.
