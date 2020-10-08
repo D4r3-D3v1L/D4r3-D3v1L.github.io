@@ -113,7 +113,7 @@ So added a **Location** header to `file://etc/passwd` in the above php file.
 
 place the ngrok link and see the response.
 
-Guess what, :boom: It worked and  we leaked the etc/passwd
+Guess what, 🙌 It worked and  we leaked the etc/passwd
 
 ![etc/passwd](3.png)
 
@@ -121,5 +121,5 @@ Guess what, :boom: It worked and  we leaked the etc/passwd
 
 
 
-Thanks for Reading :innocent:
+Thanks for Reading 😇
 
