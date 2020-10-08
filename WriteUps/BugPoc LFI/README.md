@@ -2,7 +2,8 @@
 
 ### We are given a website [Social Media Sharer](http://social.buggywebsite.com/) and We need to leak **etc/passwd**
   
-  ![Social media sharer](1.png)
+  
+  <center><img src="1.png"></center>
   
 We can write and share posts via social accounts mentioned below
   
@@ -121,5 +122,5 @@ Guess what, 🙌 It worked and  we leaked the etc/passwd
 
 
 
-Thanks for Reading 😇
+<center> Thanks for Reading 😇 <center>
 
